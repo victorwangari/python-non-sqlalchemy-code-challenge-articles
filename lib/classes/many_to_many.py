@@ -1,24 +1,47 @@
 class Article:
     all = []
+
     def __init__(self, author, magazine, title):
         self.author = author
         self.magazine = magazine
-        self.title = title
+        self._title = title  # Use the private attribute to allow setting the title initially
         Article.all.append(self)
+
+    @property
+    def title(self):
+        return self._title
+
+    @title.setter
+    def title(self, value):
+        raise AttributeError("Cannot set attribute 'title'")
+
+    
+
+    
 
     
     
 
 class Author:
-    
     def __init__(self, name):
-        self._name = name 
-        self._articles = []
+        if not isinstance(name, str):
+            raise ValueError("Name must be a string")
+        if len(name) == 0:
+            raise ValueError("Name must have more than 0 characters")
         
-
+        self._name = name
+        self._articles = []
+        self._magazines = []
+        
+    
     @property
     def name(self):
         return self._name
+
+    @name.setter
+    def name(self,value):
+        raise ValueError("Cannot change authors name")
+
 
     def articles(self):
         return [article for article in Article.all if article.author == self]
