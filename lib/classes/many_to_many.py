@@ -92,15 +92,3 @@ class Magazine:
 
 
 
-
-# author = Author("Carry Bradshaw")
-# magazine = Magazine("Vogue", "Fashion")
-# article = Article(author, magazine, "How to wear a tutu with style")
-# article = Article(author, magazine, "Javascript classes")
-# print(author.name)
-# author.articles()
-# author.add_article(magazine, "title")
-# print(author.add_article(magazine, "title"))
-# print(author.articles())
-# print(author.topic_areas())
-# print(magazine.contributing_authors())
